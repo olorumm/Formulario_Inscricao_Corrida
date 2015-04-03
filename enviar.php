@@ -17,26 +17,28 @@ $declaracao = $_POST['declaracao'];
 $cabecalho = "<h2><hr>Inscrição na Corrida da Paz</h2><hr>";
 $destinatario = "anspfeifer@gmail.com";
 //Apartir daqui sera as informações que serao enviadas por email para a empresa
-$mensagem = "
-	$cabecalho
-	Nome: $nome 
-	Telefone: $telefone
-	E-mail: $email
-	Identidade: $identidade
-	Data de Nascimento: $datanasc
-	Endereço: $endereco - $cep
-	Cidade: $cidade 
-	Estado: $estado
-	Com que frequencia eu realizo corridas: $frequencia
-	$solicitacao: Solicito-vos que seja realizada a minha inscrição para participar da Corrida da Paz, que sera realizada no Parque das Naçoes Indiginas, na cidade de Campo Grande MS as 09:00 do dia 01 de março de 2015.
-	
-	$comprometo: Comprometo-me a respeitar e cumprir as regras estabelecidas. Autorizo, ainda, o uso lícito de minha imagem, seja por meios de filmes ou qualquer outro tipo de gravação, para divulgar este evento nos meios de comunicação e imprensa em geral.
-	
-	$declaracao: Declaro que participo do evento por livre expontanea vontade, estando em boas condições, físicas e mentais, insento os organizadores, patrocinadores e colaboradores do evento, em seu nome, herdeiros ou sucessores, de qualquer responsabilidade por acidentes ou incidentes que eu venha a sofrer antes, durante ou após o mesmo."
-	
-	//Configuracao de envio
-	mail ("$destinatario","$cabecalho","$mensagem","From:$email");
+$mensagem = '<P>FORMULARIO PREENCHIDO NO SITE WWW.NOMEDOSITE.COM.BR</P>
+        '.$cabecalho.'
+        <p><b>Nome: </b>'.$nome.'
+        <b>Telefone: </b>'.$telefone.'
+        <b>E-mail: </b> '.$email.'
+        <b>Identidade: </b>'.$identidade.'
+        <b>Data de Nascimento: </b>'.$datanasc.'
+        <b>Endereço: </b>'.$endereco.'
+        <b>Cep: </b>'.$cep.'
+        <b>Cidade: </b>'.$cidade.'
+        <b>Estado: </b>'.$estado.'
+        <b>Frequencia que pratica esporte:</b> [ '.$frequencia.' ]
+        '.$solicitacao.'<b> Solicito-vos que seja realizada a minha inscrição para participar da Corrida da Paz, que sera realizada no Parque $
+        '.$comprometo.' <b>Comprometo-me a respeitar e cumprir as regras estabelecidas. Autorizo, ainda, o uso lícito de minha imagem, seja po$
+        '.$declaracao.'<b>Comprometo-me a respeitar e cumprir as regras estabelecidas. Autorizo, ainda, o uso lícito de minha imagem, seja por$
+        <hr>';
+
+        //mail ($destinatario,$cabecalho,$mensagem."From".$email);
+        mail($email, $cabecalho, $mensagem, "From: $destinatario\n")
 ?>
+	
+	?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
